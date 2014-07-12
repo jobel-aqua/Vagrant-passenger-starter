@@ -136,4 +136,3 @@ The url must be `http://localhost:8080`. This previous config means that you've 
 ## Credits
 
 - [Gazebo wiki](http://gazebosim.org/wiki/Nginx_Passenger_Rail)
-- 
