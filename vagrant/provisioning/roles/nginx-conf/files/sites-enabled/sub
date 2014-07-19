@@ -1,0 +1,15 @@
+server {
+	listen       80;
+	server_name  sub.localhost;
+
+	location / {
+		root        /var/src/sub;
+		try_files $uri $uri/ /index.html;
+	}
+
+	location /node {
+		root        /var/src/node/public;
+		passenger_app_env production;
+		passenger_enabled on;
+	}
+}

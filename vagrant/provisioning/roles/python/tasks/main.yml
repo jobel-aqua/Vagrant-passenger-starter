@@ -1,0 +1,13 @@
+---
+- name: Install the distribution's Python base packages
+  apt: pkg={{ item }} state=installed
+  with_items:
+    - python-dev
+    - python-pip
+    - python-virtualenv
+
+# - name: import python3 repository
+#   apt_repository: repo='ppa:fkrull/deadsnakes'
+
+# - name: Ensure Python in updated in 3.3 version
+#   apt: pkg=python3.3 state=present update_cache=yes

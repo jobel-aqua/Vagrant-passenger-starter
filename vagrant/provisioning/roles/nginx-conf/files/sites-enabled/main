@@ -1,0 +1,24 @@
+server {
+	listen       80;
+	server_name  localhost;
+
+	location / {
+		passenger_app_env production;
+		passenger_enabled on;
+		root         /var/src/express/public;
+	}
+
+	location /ruby {
+		passenger_app_env production;
+		passenger_enabled on;
+		root         /var/src/ruby/public;
+	}
+
+	location /python {
+		passenger_app_env production;
+		passenger_enabled on;
+		root         /var/src/python/public;
+	}
+
+	error_page  404              /404.html;
+}

@@ -1,0 +1,6 @@
+---
+- name: Import nodejs repository
+  apt_repository: repo='ppa:chris-lea/node.js'
+  
+- name: Ensure Nodejs is updated in 0.10.4 version (stable)
+  apt: pkg=nodejs state=present update_cache=yes

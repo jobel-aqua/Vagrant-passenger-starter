@@ -1,0 +1,7 @@
+--- 
+- include: import-conf.yml
+- include: nginx-conf.yml
+- include: enabled-conf.yml
+- include: include-conf.yml
+
+- include: initd.yml

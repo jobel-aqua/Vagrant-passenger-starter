@@ -1,0 +1,19 @@
+---
+- name: Install Ruby, Nodejs, Python webapps with passenger nginx
+  hosts: all
+  # user: root
+  sudo: true
+
+  pre_tasks:
+    - name: Update APT
+      sudo: yes
+      apt: update_cache=yes
+
+  roles:
+    - build-essential
+    - ruby-dev
+    - ruby-2.1
+    - nodejs
+    - python
+    - passenger
+    - nginx-conf

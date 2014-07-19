@@ -1,0 +1,12 @@
+---
+- name: Import ruby-ng-experimental repository
+  apt_repository: repo='ppa:brightbox/ruby-ng-experimental'
+  
+- name: Ensure Ruby in updated in 2.1 version
+  apt: >
+    pkg={{ item }} 
+    state=present
+  with_items:
+    - ruby2.1
+    - ruby2.1-dev
+    - ruby2.1-doc

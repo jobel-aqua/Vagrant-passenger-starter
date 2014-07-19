@@ -1,0 +1,9 @@
+---
+# PGP key
+pgp_id: AC40B2F7
+pgp_url: 'http://keyserver.ubuntu.com/pks/lookup?op=get&fingerprint=on&search=0x561F9B9CAC40B2F7'
+
+# Passenger
+passenger_version: '"deb https://oss-binaries.phusionpassenger.com/apt/passenger precise main"'
+nginx_dir: /opt/nginx
+nginx_options: --auto-download --auto --prefix={{ nginx_dir }} --extra-configure-flags=none

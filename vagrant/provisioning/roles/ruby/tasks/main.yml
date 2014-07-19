@@ -1,0 +1,34 @@
+---
+- name: Install the distribution's Ruby base packages
+  apt: >
+    pkg={{ item }} 
+    state=installed
+  with_items:
+    - ruby
+    - ruby-dev
+
+- name: Install the distribution's Ruby base packages
+  apt: >
+    pkg={{ item }} 
+    state=installed
+  with_items:
+    - ruby
+
+- name: Install Ruby gem usual dependencies
+  apt: >
+    pkg={{ item }} 
+    state=installed
+  with_items:
+    - libcurl4-openssl-dev
+    # - libssl-dev
+    # - zlib1g-dev
+    # - ruby-bundler
+    - rubygems
+    # - libxml2
+
+- name: Install gems
+  gem: >
+    name={{ item }} 
+    state=latest
+  with_items: 
+    - ruby_gems

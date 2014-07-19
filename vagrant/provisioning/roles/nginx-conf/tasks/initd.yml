@@ -1,0 +1,11 @@
+---
+- name: Create nginx basic conf
+  copy: src=init.d/nginx dest=/etc/init.d/nginx
+
+- name: Set permission to the new config
+  command: '{{ item }}'
+  with_items: 
+    - sudo chmod +x /etc/init.d/nginx
+    - sudo /usr/sbin/update-rc.d -f nginx defaults
+    # - sudo service nginx start
+

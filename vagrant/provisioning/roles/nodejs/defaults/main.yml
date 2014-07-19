@@ -1,0 +1,3 @@
+node_install_from: sources
+node_version: 0.10.4
+node_src_baseurl: http://nodejs.org/dist/

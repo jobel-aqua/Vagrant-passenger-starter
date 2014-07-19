@@ -1,0 +1,3 @@
+---
+- name: Add nginx.conf file
+  copy: src=nginx.conf dest={{ nginx_dir }}/conf/nginx.conf

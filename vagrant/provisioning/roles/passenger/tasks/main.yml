@@ -1,0 +1,27 @@
+---
+- name: Install the PGP key
+  apt_key: >
+    id={{ pgp_id }} 
+    state=present 
+    url={{ pgp_url }}
+
+- name: Install https support for apt
+  apt: >
+    pkg=apt-transport-https 
+    state=present
+
+- name: Import passenger apt repository
+  apt_repository: >
+    state=present 
+    repo={{ passenger_version }}
+
+- name: Install passenger
+  apt: >
+    pkg=passenger 
+    state=present 
+    update_cache=yes
+
+- name: Install passenger-nginx
+  command: >
+    passenger-install-nginx-module {{ nginx_options }} 
+    creates={{ nginx_dir }}

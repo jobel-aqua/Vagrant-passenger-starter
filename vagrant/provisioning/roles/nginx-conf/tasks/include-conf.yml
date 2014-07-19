@@ -1,0 +1,6 @@
+---
+- name: Ensure the Include.d/ directory exists
+  command: mkdir -p {{ nginx_dir }}/conf/include.d creates={{ nginx_dir }}/conf/include.d state=link
+
+- name: Add passenger.conf file
+  copy: src=passenger.conf dest={{ nginx_dir }}/conf/include.d/passenger.conf

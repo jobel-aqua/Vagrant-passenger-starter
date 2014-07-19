@@ -1,0 +1,18 @@
+---
+- name: Ensure the Sites-enabled/ directory exists
+  command: > 
+    mkdir -p {{ nginx_dir }}/sites-enabled 
+    creates={{ nginx_dir }}/sites-enabled 
+    state=link
+
+- name: Import all Nginx conf parts
+  synchronize: >
+    src=sites-enabled 
+    dest={{ nginx_dir }}
+    rsync_path='sudo rsync'
+    recursive=yes
+    perms=yes
+  ignore_errors: True
+  
+  # with_fileglob:
+  #   - /sites-enabled

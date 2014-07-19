@@ -1,0 +1,30 @@
+---
+- name: Install python and C++ packages
+  sudo: yes
+  apt:
+    name: '{{ item }}'
+  with_items:
+    - build-essential
+    - libcurl4-openssl-dev
+    - python-setuptools
+    - python-dev
+  tags:
+    - python
+    - dev
+    - deps
+
+- name: Install pip
+  sudo: yes
+  easy_install:
+    name: pip
+  tags:
+    - python
+    - deps
+
+- name: Install pycurl
+  sudo: yes
+  pip:
+    name: pycurl
+  tags:
+    - python
+    - deps

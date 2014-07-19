@@ -1,0 +1,3 @@
+---
+conf_dir: /var/conf
+nginx_dir: /opt/nginx
