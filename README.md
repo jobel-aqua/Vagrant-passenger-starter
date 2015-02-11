@@ -35,3 +35,5 @@ NB: Subdomain are only accessibles if you've added to your `/etc/hosts`
 - [Ansible doc](http://docs.ansible.com/index.html)
 - [Vagrant doc](https://docs.vagrantup.com/v2/)
 - [Gazebo wiki](http://gazebosim.org/wiki/Nginx_Passenger_Rail)
+
+[![Analytics](https://ga-beacon.appspot.com/UA-59640055-1/Vagrant-passenger-starter/readme)](https://github.com/igrigorik/ga-beacon)
